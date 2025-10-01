@@ -1,15 +1,36 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <fstream>
+#include <limits>
 
 using namespace std;
 
 int main()
 {
-    string input;
-    
-    cout << "Write the input: ";
-    getline(cin, input);
+    string input, filename = "konstitucija.txt";
+    char choice;
+    cout << "Do you want to read from a file (f) or input manually (m)?";
+    cin >> choice;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    if (choice == 'm') {
+        
+        cout << "Write the input: ";
+        getline(cin, input);
+    } else if (choice == 'f')
+    {
+
+        ifstream fd (filename);   
+       //string content;
+    string line;
+    while (getline(fd, line)) {      
+        input += line + "\n";        
+    }
+
+    fd.close();       
+        
+    }
 
     unsigned char hash[32] = {0};
 

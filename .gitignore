@@ -41,4 +41,8 @@
 *.dwo
 
 .vscode/
+.txt/
 
+konstitucija.txt
+text1.txt
+text2.txt
