@@ -15,7 +15,13 @@ int main()
 
     for (int i=0; i<input.size(); i++)
     {
+        unsigned char c = input[i];
+        unsigned char rotated = (c << (i % 8)) | (c >> (8 - (i % 8)));
         hash[i % 32] = (hash[i % 32] + input[i]) % 256;
+
+        int pos = (i * 7 + c) % 32;
+        hash[pos] = (hash[pos] ^ rotated);
+        hash[(pos + 13) % 32] = (hash[(pos + 13) % 32] + c * 31) % 256;
 
     }
 
