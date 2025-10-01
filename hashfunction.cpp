@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     string input;
-    int sum = 0;
+    
     cout << "Write the input: ";
     getline(cin, input);
 
