@@ -4,20 +4,45 @@
 
 ### Idėja:
 
-```Vartotojas parašo input'ą.
-Inputas perskaitomas su getline().
-Sukuriamas 32 baitų masyvas: unsigned char hash[32] = {0};
+```PRADŽIA
+    Paklausia vartotojo, kokiu būdu įves input'ą: skaitant failą ar įvedant ranka?
+    Jei rankinis įvedimas:
+        Nuskaito input'ą su getline()
+    Jei failas:
+        Atidaro failą
+        Nuskaito visas eilutes ir sujungia į vieną string
+        Uždaro failą
+    Pabaiga jei
 
-FOR kiekvienas simbolis input’e
-    Paimti simbolio ASCII reikšmę → c
-    Pasukti c bitus pagal simbolio poziciją → rotated
-    Pridėti ASCII reikšmę prie hash[i mod 32] → hash[i % 32] = (hash[i % 32] + c) mod 256
-    Apskaičiuoti pseudo-atsitiktinę poziciją: pos = (i * 7 + c) mod 32
-    XOR rotated reikšmę su hash[pos] → hash[pos] = hash[pos] XOR rotated
-    Pridėti ASCII reikšmę * 31 prie kito hash elemento → hash[(pos + 13) mod 32] = (hash[(pos + 13) mod 32] + c * 31) mod 256
-END FOR
+    Inicializuoja 4 lane su skirtingais pradžios seed'ais (out[4])
 
-Atspausdinti hash masyvą kaip 64 simbolių ilgio hex eilutę 
+    FOR kiekvienas simbolis input'e
+        c = ASCII simbolio reikšmė
+        lane = i mod 4
+
+        out[lane] = out[lane] XOR (c * 0x100000001b3)
+        out[lane] = pasuka bitus į kairę (i*7 mod 64)
+        out[lane] = out[lane] * 0xff51afd7ed558ccd
+        out[lane] = out[lane] XOR (out[lane] >> 32)
+
+        other = (lane + 1) mod 4
+        out[other] = out[other] XOR pasuka bitus (c + out[lane], i*13 mod 64)
+        out[other] = out[other] * 0x9e3779b97f4a7c15
+    END FOR
+
+    FOR round = 0 to 3
+        FOR j = 0 to 3
+            x = out[j]
+            x = x XOR pasuka bitus (out[(j+1) mod 4], j*17 + round*11)
+            x = x * 0xc2b2ae3d27d4eb4f
+            x = x XOR (x >> 29)
+            out[j] = x
+        END FOR
+    END FOR
+
+    Atspausdina out[0..3] kaip 64 simbolių ilgio hex eilutę
+PABAIGA
+
 ```
 
 
