@@ -21,8 +21,9 @@ Atspausdinti hash masyvą kaip 64 simbolių ilgio hex eilutę ```
 
 
 ### Testing 
-text1.txt file        -> hash: 570aaa6511d7b1eff3d6ca8e0854728d7a50d5278c427f0f911f44a8cf9a98f3
-text2.txt file        -> hash: e5ab8fb9db4bf595bea0c72bb2072baa0707f9b70bea6ddd7f575fedadfdbb6e
-konstitucija.txt file -> hash: 174f41663f42b304b882afa9d8e689607dc1c137732959fa3b920649e45b6f3f
+text1.txt file        -> hash: 333b032039bef039c6eb417c030c56591c782cd18c98698d18446fc3f02a7f93
+text2.txt file        -> hash: 32ab04ab717ca70af359dd70eb7f4b3a38860b6f065b290238d36667ec01e47b
+konstitucija.txt file -> hash: a68b86f57c42b9321bcbcc80c26ede09627675aa827b67b68fe4fdd06f2181fa
+text3.txt file        -> hash: cb1719b3fd6c50651a7d15513aed34a03ea506b14d461a642c8d0ac9fb49784f
 
 
