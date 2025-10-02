@@ -18,6 +18,7 @@ FOR kiekvienas simbolis input’e
 END FOR
 
 Atspausdinti hash masyvą kaip 64 simbolių ilgio hex eilutę 
+```
 
 
 
