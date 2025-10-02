@@ -4,7 +4,7 @@
 
 ### Idėja:
 
-``` Vartotojas parašo input'ą.
+`Vartotojas parašo input'ą.
 Inputas perskaitomas su getline().
 Sukuriamas 32 baitų masyvas: unsigned char hash[32] = {0};
 
@@ -17,7 +17,8 @@ FOR kiekvienas simbolis input’e
     Pridėti ASCII reikšmę * 31 prie kito hash elemento → hash[(pos + 13) mod 32] = (hash[(pos + 13) mod 32] + c * 31) mod 256
 END FOR
 
-Atspausdinti hash masyvą kaip 64 simbolių ilgio hex eilutę ```
+Atspausdinti hash masyvą kaip 64 simbolių ilgio hex eilutę `
+
 
 
 ### Testing 
