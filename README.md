@@ -81,3 +81,9 @@ PABAIGA
 
  Įrodymas:
  ![irodymas](sc.png)
+
+
+ 4. Kolizijų testas
+ Kolizijų nerasta: 
+ 
+ ![irodymas2](sc2.png)

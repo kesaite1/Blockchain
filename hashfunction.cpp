@@ -18,6 +18,25 @@ using namespace std;
     return chars[dist(gen)];
 }*/
 
+string randomString(size_t length) {
+    static const string chars =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    static mt19937 gen(random_device{}());
+    static uniform_int_distribution<> dist(0, chars.size() - 1);
+
+    string s;
+    s.reserve(length);
+    for (size_t i = 0; i < length; ++i)
+        s += chars[dist(gen)];
+    return s;
+}
+
+bool hashesEqual(const uint64_t h1[4], const uint64_t h2[4]) {
+    for (int i = 0; i < 4; ++i)
+        if (h1[i] != h2[i]) return false;
+    return true;
+}
+
 static inline uint64_t rotl(uint64_t x, unsigned r) {
     return (x << r) | (x >> (64 - r));
 }
@@ -62,7 +81,7 @@ int main()
 {
     string input, filename = "testiniaiFailai/random1.txt";
     char choice;
-    size_t kiek = 0;
+    size_t kiek = 0, lengths[] = {10, 100, 500, 1000};
 
    /* // Generatorius
     random_device rd;
@@ -116,6 +135,27 @@ int main()
 
     fd.close();       
         
+    }
+
+    //size_t lengths[] = {10, 100, 500, 1000};
+
+    for (size_t len : lengths) {
+        size_t collisions = 0;
+
+        for (size_t i = 0; i < 100000; ++i) {
+            string s1 = randomString(len);
+            string s2 = randomString(len);
+
+            uint64_t h1[4], h2[4];
+            customHash256(s1, h1);
+            customHash256(s2, h2);
+
+            if (hashesEqual(h1, h2))
+                ++collisions;
+        }
+
+        cout << "Length " << len << ": " << collisions
+                  << " collisions out of 100000 pairs\n";
     }
 
     uint64_t hash[4];
