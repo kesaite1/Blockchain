@@ -79,7 +79,7 @@ void customHash256(const string& input, uint64_t out[4]) {
 
 int main()
 {
-    string input, filename = "testiniaiFailai/random1.txt";
+    string input, filename = "testiniaiFailai/konstitucija.txt";
     char choice;
     size_t kiek = 0, lengths[] = {10, 100, 500, 1000};
 
@@ -139,7 +139,7 @@ int main()
 
     //size_t lengths[] = {10, 100, 500, 1000};
 
-    for (size_t len : lengths) {
+    /*for (size_t len : lengths) {
         size_t collisions = 0;
 
         for (size_t i = 0; i < 100000; ++i) {
@@ -156,7 +156,7 @@ int main()
 
         cout << "Length " << len << ": " << collisions
                   << " collisions out of 100000 pairs\n";
-    }
+    }*/
 
     uint64_t hash[4];
     customHash256(input, hash);

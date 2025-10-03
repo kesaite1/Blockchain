@@ -85,5 +85,65 @@ PABAIGA
 
  4. Kolizijų testas
  Kolizijų nerasta: 
- 
+
  ![irodymas2](sc2.png)
+
+5. Efektyvumo matavimas
+
+Repeats per size: 5
+Writing raw timings to 'timings.csv'
+size=     1 repeat=0 time=0.0022 ms
+size=     1 repeat=1 time=0.0018 ms
+size=     1 repeat=2 time=0.0013 ms
+size=     1 repeat=3 time=0.0013 ms
+size=     1 repeat=4 time=0.0014 ms
+size=     2 repeat=0 time=0.0022 ms
+size=     2 repeat=1 time=0.0021 ms
+size=     2 repeat=2 time=0.0021 ms
+size=     2 repeat=3 time=0.0021 ms
+size=     2 repeat=4 time=0.0021 ms
+size=     4 repeat=0 time=0.0034 ms
+size=     4 repeat=1 time=0.0034 ms
+size=     4 repeat=2 time=0.0034 ms
+size=     4 repeat=3 time=0.0035 ms
+size=     4 repeat=4 time=0.0035 ms
+size=     8 repeat=0 time=0.006 ms
+size=     8 repeat=1 time=0.006 ms
+size=     8 repeat=2 time=0.006 ms
+size=     8 repeat=3 time=0.006 ms
+size=     8 repeat=4 time=0.006 ms
+size=    16 repeat=0 time=0.0162 ms
+size=    16 repeat=1 time=0.0162 ms
+size=    16 repeat=2 time=0.0162 ms
+size=    16 repeat=3 time=0.0163 ms
+size=    16 repeat=4 time=0.0162 ms
+size=    32 repeat=0 time=0.0299 ms
+size=    32 repeat=1 time=0.0299 ms
+size=    32 repeat=2 time=0.0299 ms
+size=    32 repeat=3 time=0.0298 ms
+size=    32 repeat=4 time=0.0299 ms
+size=    64 repeat=0 time=0.0602 ms
+size=    64 repeat=1 time=0.0602 ms
+size=    64 repeat=2 time=0.0602 ms
+size=    64 repeat=3 time=0.0601 ms
+size=    64 repeat=4 time=0.0602 ms
+size=   128 repeat=0 time=0.1481 ms
+size=   128 repeat=1 time=0.1481 ms
+size=   128 repeat=2 time=0.1614 ms
+size=   128 repeat=3 time=0.1482 ms
+size=   128 repeat=4 time=0.1481 ms
+size=   256 repeat=0 time=0.3299 ms
+size=   256 repeat=1 time=0.3464 ms
+size=   256 repeat=2 time=0.2996 ms
+size=   256 repeat=3 time=0.3062 ms
+size=   256 repeat=4 time=0.2997 ms
+size=   512 repeat=0 time=0.6964 ms
+size=   512 repeat=1 time=0.7029 ms
+size=   512 repeat=2 time=0.6964 ms
+size=   512 repeat=3 time=0.6964 ms
+size=   512 repeat=4 time=0.7022 ms
+size=   789 repeat=0 time=1.1471 ms
+size=   789 repeat=1 time=1.1165 ms
+size=   789 repeat=2 time=1.1098 ms
+size=   789 repeat=3 time=1.1156 ms
+size=   789 repeat=4 time=1.1097 ms
