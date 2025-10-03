@@ -105,15 +105,29 @@ int countDifferentBits(const uint64_t h1[4], const uint64_t h2[4]) {
     return diff;
 }
 
+string randomSalt(size_t length) {
+    static const std::string chars =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    static std::mt19937 gen(std::random_device{}());
+    static std::uniform_int_distribution<> dist(0, chars.size() - 1);
+
+    std::string salt;
+    salt.reserve(length);
+    for (size_t i = 0; i < length; i++) {
+        salt += chars[dist(gen)];
+    }
+    return salt;
+}
 
 
 int main()
 {
-    string input, filename = "testiniaiFailai/empty.txt";
+    string filename = "testiniaiFailai/empty.txt", input = "password123", salt = randomSalt(16), combined = input + salt;
     char choice;
     size_t kiek = 0, lengths[] = {10, 100, 500, 1000};
     const int PAIRS = 100000;
     const int LEN = 100;
+    
 
    /* // Generatorius
     random_device rd;
@@ -247,8 +261,20 @@ int main()
     }*/
 
     uint64_t hash[4];
+    customHash256(combined, hash);
     customHash256(input, hash);
     
+    std::cout << "Input: " << input << "\n";
+    std::cout << "Salt: " << salt << "\n";
+    std::cout << "Hash(input + salt): " << hashToHex(hash) << "\n\n";
+
+    std::string salt2 = randomSalt(16);
+    uint64_t hash2[4];
+    customHash256(input + salt2, hash2);
+
+    std::cout << "Changed salt: " << salt2 << "\n";
+    std::cout << "Hash(input + new salt): " << hashToHex(hash2) << "\n";
+
     cout << "Hash: "; 
     cout << hex << setfill('0'); 
     for (int i = 0; i < 4; i++) { 

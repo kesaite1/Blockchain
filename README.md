@@ -84,6 +84,7 @@ PABAIGA
 
 
  4. Kolizijų testas
+ 
  Kolizijų nerasta: 
 
  ![irodymas2](sc2.png)
@@ -149,8 +150,6 @@ size=   789 repeat=3 time=1.1156 ms
 size=   789 repeat=4 time=1.1097 ms
 
 
-tai jei turiu 5 testavimo failus, šį testavimą turiu atlikti 5 kartus su kievienu failu atskirai ? nes šis testavimas dirba su konkrečiomis hash funkcijomis?
-
 6. Lavinos efekto testavimas
 - a.txt:
 Bit level differences:
@@ -211,3 +210,16 @@ Hex level differences:
   Min: 48
   Max: 64
   Avg: 59.9978
+
+  7. Negrįžtamumo įrodymas
+
+Pvz. 
+Input: password123
+Salt: JhswNLCXNouzU8XR
+Hash(input + salt): e9ad02959c3107392b032354d37906bf6c0563096e075f704039d4ce16862f8a
+
+Changed salt: Pkq6ExcSwE9Tc3sH
+Hash(input + new salt): 375041e630e752cc2a7bf6a144ec7a83f5b3c349cee8baccc912f570d5872abd
+Hash: e9ad02959c3107392b032354d37906bf6c0563096e075f704039d4ce16862f8a
+
+Input'as identiškas, o hash'ai kardinaliai skiriasi.
