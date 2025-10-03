@@ -60,7 +60,7 @@ void customHash256(const string& input, uint64_t out[4]) {
 
 int main()
 {
-    string input, filename = "testiniaiFailai/empty.txt";
+    string input, filename = "testiniaiFailai/random1.txt";
     char choice;
     size_t kiek = 0;
 

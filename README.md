@@ -72,3 +72,12 @@ PABAIGA
  |random2.txt       |49939b6a15fe4f8468c66b5a61a6fefbc71958b3f99b84d06b73afc77c825653  |
  |random2_mod.txt   |68142adf8e9646a09f82e07af09d8e8b44d0614ac565a3ee8c27cc40d63e4572  |
  |empty.txt         |65d37efc8d7fbe74319f8f97dd570b623fca7827f232485138b2208970d43764  |
+
+ 3. Determiniškumo tikrinimas - tas pats failas duoda tą patį hash'ą
+
+ Pvz. failas random1.txt 
+ 1 bandymas. Hash: a753a39880b5adbc474eef9f49b29491c4b3ead90c36c9ee2733c8a032a021ff
+ 2 bandymas. Hash: a753a39880b5adbc474eef9f49b29491c4b3ead90c36c9ee2733c8a032a021ff
+
+ Įrodymas:
+ ![irodymas](sc.png)
