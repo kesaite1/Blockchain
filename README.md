@@ -223,3 +223,7 @@ Hash(input + new salt): 375041e630e752cc2a7bf6a144ec7a83f5b3c349cee8baccc912f570
 Hash: e9ad02959c3107392b032354d37906bf6c0563096e075f704039d4ce16862f8a
 
 Input'as identiškas, o hash'ai kardinaliai skiriasi.
+
+8. Išvada:
+
+Atlikti eksperimentiniai tyrimai parodė, kad realizuota hash funkcija pasižymi stabilia struktūra ir tinkamomis savybėmis: jos rezultato ilgis visada pastovus (256 bitai), kolizijų nerasta, veikimo laikas didėja tiesiškai su įvesties dydžiu, o lavinos efektas užtikrina, kad net pakeitus vieną simbolį įvestyje vidutiniškai pakinta apie pusė visų hash’o bitų, kas rodo gerą difuziją. Taip pat pademonstruotas negrįžtamumas — žinant HASH(input + salt) neįmanoma atkurti nei pradinio įvesties, nei druskos (salt), o net nedideli salt pakeitimai duoda visiškai skirtingus rezultatus. Apibendrinant, hash funkcija atitinka pagrindinius kokybiško maišos algoritmo kriterijus: pastovų ilgį, labai mažą kolizijų tikimybę, lavinos efektą, tiesinį efektyvumą ir vienakryptiškumą.
