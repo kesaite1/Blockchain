@@ -147,3 +147,67 @@ size=   789 repeat=1 time=1.1165 ms
 size=   789 repeat=2 time=1.1098 ms
 size=   789 repeat=3 time=1.1156 ms
 size=   789 repeat=4 time=1.1097 ms
+
+
+tai jei turiu 5 testavimo failus, šį testavimą turiu atlikti 5 kartus su kievienu failu atskirai ? nes šis testavimas dirba su konkrečiomis hash funkcijomis?
+
+6. Lavinos efekto testavimas
+- a.txt:
+Bit level differences:
+  Min: 92
+  Max: 163
+  Avg: 128.004
+Hex level differences:
+  Min: 50
+  Max: 64
+  Avg: 59.9988
+
+  - b.txt:
+  Bit level differences:
+  Min: 93
+  Max: 164
+  Avg: 127.987
+Hex level differences:
+  Min: 50
+  Max: 64
+  Avg: 60.0002
+
+  - random1.txt:
+  Bit level differences:
+  Min: 92
+  Max: 161
+  Avg: 128.024
+Hex level differences:
+  Min: 49
+  Max: 64
+  Avg: 60.0041
+
+  - random2.txt:
+  Bit level differences:
+  Min: 92
+  Max: 163
+  Avg: 127.96
+Hex level differences:
+  Min: 49
+  Max: 64
+  Avg: 59.9957
+
+  - random2_mod.txt:
+  Bit level differences:
+  Min: 93
+  Max: 164
+  Avg: 127.993
+Hex level differences:
+  Min: 50
+  Max: 64
+  Avg: 59.993
+
+  - empty.txt:
+  Bit level differences:
+  Min: 90
+  Max: 160
+  Avg: 128.029
+Hex level differences:
+  Min: 48
+  Max: 64
+  Avg: 59.9978
